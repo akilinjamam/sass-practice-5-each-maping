@@ -1,0 +1,41 @@
+$colors: (
+color1: red,
+color2: blue,
+color3: orange,
+color4: green,
+);
+
+@each $key, $color in $colors {
+    .#{$color}-background {
+        background-color: $color
+    }
+}
+
+@mixin alignment{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    @include alignment();
+    main{
+        display: flex;
+        div{
+            width: 200px;
+            height: 200px;
+            border: 1px solid gray;
+            @include alignment();
+            margin: 5px;
+
+            p {
+                color: white
+            }
+        }
+    }
+}
